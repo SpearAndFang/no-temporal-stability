@@ -1,0 +1,13 @@
+{
+    "type": "code",
+    "modid": "temporalstability",
+    "name": "NO Temporal Stability",
+    "authors": [
+        "SpearAndFang"
+    ],
+    "description": "Because life isn't miserable enough",
+    "version": "1.0.0",
+    "dependencies": {
+        "game": ""
+    }
+}
