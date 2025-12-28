@@ -11,12 +11,19 @@ namespace temporalstability
     public class temporalstabilityModSystem : ModSystem
     {
 
-        ICoreAPI api;
+        //ICoreAPI api;
+        private Harmony harmony = new Harmony("spang.GetTemporalStability");
 
         public override void Start(ICoreAPI api)
         {
-            var harmony = new Harmony("spang.TemporalStability");
+            
             harmony.PatchAll(Assembly.GetExecutingAssembly());
+        }
+
+        public override void Dispose()
+        {
+            this.harmony.UnpatchAll("spang.GetTemporalStability");
+            base.Dispose();
         }
 
 
@@ -55,5 +62,6 @@ namespace temporalstability
                 __result = 0f;
             }
         }
+        
     }
 }
